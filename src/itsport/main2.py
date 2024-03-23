@@ -1,11 +1,13 @@
 
 import pathlib
 import exifread
+import logging
 
 def get_exif_data(dir_path):
    dir_path = pathlib.Path(dir_path)
    exif_data = []
    for file_path in dir_path.glob("*.[pP][nN][gG]"):
+       logging.debug(f"Processing file: {file_path}")
        with open(file_path, 'rb') as f:
            tags = exifread.process_file(f)
            
