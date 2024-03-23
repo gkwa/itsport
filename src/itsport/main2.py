@@ -38,4 +38,3 @@ def render_output(exif_data, unique_tags):
         output += f"- {tag}\n"
     
     return output
-```
